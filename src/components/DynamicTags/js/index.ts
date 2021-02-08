@@ -1,4 +1,4 @@
-import {ref,nextTick,watch} from 'vue'
+import {ref,toRaw,nextTick,watch} from 'vue'
 
 export default function dynamicTags(props: any,context: any) {
     //输入框Dom
@@ -48,7 +48,7 @@ export default function dynamicTags(props: any,context: any) {
     };
 
     watch(tags.value, (newValue, oldValue) => {
-        context.emit("change", [...tags.value]);
+        context.emit("change", toRaw(tags.value));
     });
 
     return {

@@ -10,6 +10,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/dynamic-tags-page',
     name: 'DynamicTagsPage',
     component: () => import('../views/DynamicTagsPage.vue')
+  },
+  {
+    path: '/dynamic-input-page',
+    name: 'DynamicInputsPage',
+    component: () => import('../views/DynamicInputPage.vue')
   }
 ];
 
