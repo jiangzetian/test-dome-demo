@@ -1,7 +1,7 @@
 # vue3练习Demo
 项目包含：
 
-Typescript,Scss,Ant-design-vue,Vue-Router
+Typescript,Scss,Ant-design-vue,Vue-Router,i18n
 
 ## 1.动态标签(DynamicTags)
 
