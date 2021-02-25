@@ -9,3 +9,6 @@ Typescript,Scss,Ant-design-vue,Vue-Router
 
 ## 2.动态输入框(DynamicInput)
 预览地址：/dynamic-input-page
+
+## 3.多语言(i18n)
+预览地址：/i18n

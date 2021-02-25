@@ -6,8 +6,12 @@ import router from './router'
 import Antd from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.css';
 
+//i18n
+import i18n from '@/i18n'
+
 const app = createApp(App);
 
 app.use(router);
 app.use(Antd);
+app.use(i18n);
 app.mount('#app');

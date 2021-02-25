@@ -15,6 +15,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/dynamic-input-page',
     name: 'DynamicInputsPage',
     component: () => import('../views/DynamicInputPage.vue')
+  },
+  {
+    path: '/i18n',
+    name: 'i18n',
+    component: () => import('../views/i18n.vue')
   }
 ];
 

@@ -20,7 +20,7 @@
         </a-row>
     </a-space>
     <a-tag v-else @click="addInput">
-        <plus-outlined /> 添加物品
+        <plus-outlined /> 添加内容
     </a-tag>
 </template>
 
