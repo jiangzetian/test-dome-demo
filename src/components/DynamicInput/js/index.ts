@@ -1,7 +1,8 @@
-import {ref,toRaw,watch} from 'vue'
+import {ref,toRaw,watch,nextTick} from 'vue'
 import { message } from 'ant-design-vue';
 
 export default function dynamicInput(props: any,context: any) {
+    const inputBoxDom: any = ref(null);
     const data = ref<object[]>([]);
     //添加输入
     const addInput = ()=>{
@@ -9,10 +10,16 @@ export default function dynamicInput(props: any,context: any) {
             name:'',
             count:1,
         });
+        //自动聚焦输入框
+        nextTick(() => {
+            const dom = inputBoxDom.value;
+            const lastIndex = dom.$el.children.length-1;
+            console.log(dom.$el.children[lastIndex].getElementsByClassName("ant-input")[0].focus());
+        });
     };
     //输入框失去焦点
     const inputBlur = (item: any,index: number)=>{
-        if(!item.name){
+        if(!item.name || !item.name.trim()){
             message.config({
                 maxCount:1,
             });
@@ -30,6 +37,12 @@ export default function dynamicInput(props: any,context: any) {
                 count:1,
             });
         }
+        //自动聚焦输入框
+        nextTick(() => {
+            const dom = inputBoxDom.value;
+            const lastIndex = dom.$el.children.length-1;
+            console.log(dom.$el.children[lastIndex].getElementsByClassName("ant-input")[0].focus());
+        });
     };
     //输入框删除按钮
     const ItemInputDelBtn = (index: number)=>{
@@ -41,6 +54,7 @@ export default function dynamicInput(props: any,context: any) {
     });
 
     return {
+        inputBoxDom,
         data,
         addInput,
         ItemInputAddBtn,
