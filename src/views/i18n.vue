@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container">
         <h1>{{ $t("message.hello") }}</h1>
         <a-button type="primary" @click="languageBtn">{{langText}}</a-button>
     </div>
@@ -44,4 +44,9 @@
 </script>
 
 <style scoped>
+    .container{
+        margin: 0 auto;
+        width: 100%;
+        max-width: 1200px;
+    }
 </style>
